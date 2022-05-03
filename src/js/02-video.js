@@ -16,13 +16,5 @@ function saveCurrentTime() {
 
 function getCurrentTime() {
     const currentTime = localStorage.getItem(LOCAL_STORAGE_KEY);
-    player.setCurrentTime(currentTime).then(function (seconds) {
-        console.log(seconds);
-    }).catch(function(error) {
-        switch (error.name) {
-            case 'RangeError':
-                // the time was less than 0 or greater than the video’s duration
-                break;
-        }
-    });
+    player.setCurrentTime(currentTime);
 }
